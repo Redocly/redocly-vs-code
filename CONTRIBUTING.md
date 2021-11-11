@@ -6,7 +6,7 @@ You can help us make the extension better by:
 
 - [reporting bugs](https://github.com/Redocly/redocly-vs-code/issues/new/choose)
 - [sharing ideas for new features](https://github.com/Redocly/redocly-vs-code/issues/new/choose)
-- [improving the README](https://github.com/Redocly/redocly-vs-code/blob/main/README.md)
+- [improving the README](./README.md)
 
 
 To ensure that your contribution is successful, please follow these guidelines:
