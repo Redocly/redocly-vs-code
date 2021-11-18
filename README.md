@@ -10,10 +10,10 @@ Redocly OpenAPI is a Visual Studio Code extension that helps you write, validate
 - Work with multi-file definitions
 - Preview API documentation side-by-side with your OpenAPI definition
 - Access context-aware help about OpenAPI features
+- Edit API definitions through interactive forms 
 
 
 ![Peek and go-to definition features](https://redoc.ly/images/vscode/openapi-vscode-peek.gif)
-
 
 **Found an issue or have an idea for improving the extension? [Let us know!](https://github.com/Redocly/redocly-vs-code/issues/new/choose)**
 
@@ -92,6 +92,10 @@ The Redocly OpenAPI VS Code extension helps you create and update OpenAPI docume
 
 To start using it, either create a new OpenAPI definition or open an existing one in your VS Code.
 
+If this is your first time working with OpenAPI definitions, you can use our default template to get started. Create an empty YAML file and open the *Cursor context* panel. In the panel, select **Add template**. Now you have a fully functional OpenAPI definition you can use with the extension.
+
+![Adding the default OpenAPI template](https://redoc.ly/images/vscode/redocly-vscode-default-template.gif)
+
 
 ### OpenAPI structure autocompletion 
 
@@ -169,8 +173,6 @@ In the tab bar above the panel, select the name of the YAML file for which you w
 
 To customize the documentation preview, add [supported Reference configuration options](https://redoc.ly/docs/api-reference-docs/configuration/) to the `referenceDocs` section in your `.redocly.yaml` file.
 
-**Note:** the `htmlTemplate` configuration option is not supported for the VS Code extension.
-
 For example, to hide the logo image and change the font size and color, you could add the following:
 
 ```yaml
@@ -195,7 +197,7 @@ Remember to save the `.redocly.yaml` file for changes to apply.
 To exit the documentation preview, close the *Preview* panel. You can open it again at any point.
 
 
-### Context-aware help for OpenAPI authoring
+### Interactive forms and context-aware help for OpenAPI authoring
 
 To help you write valid, specification-compliant API definitions, the Redocly OpenAPI VS Code extension provides dynamic descriptions of OpenAPI features in the cursor context panel. 
 
@@ -211,10 +213,16 @@ As you place your cursor into different sections of your OpenAPI document, the c
 
 ![Using the cursor context panel](https://redoc.ly/images/vscode/openapi-vscode-context-explorer.png)
 
+For supported sections, the *Cursor context* panel can also display a visual editor where you can change the contents of your API definition through interactive forms.
+
+![Using the visual editor](https://redoc.ly/images/vscode/redocly-vscode-visual-editor.gif)
+
 To exit, close the *Cursor context* panel. You can open it again at any point.
 
 
 ## Known issues
+
+- Interactive forms are supported only for `info`, `server`, and `externalDocs` sections in the current version.
 
 - Autocompletion support is limited in the current version.
 
@@ -233,4 +241,3 @@ If you suspect the extension is not working properly, make sure the following co
 ## License
 
 Installation and usage of the extension are subject to the terms and conditions of the [Redocly Subscription agreement](https://redoc.ly/subscription-agreement/).
-
