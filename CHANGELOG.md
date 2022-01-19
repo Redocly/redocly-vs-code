@@ -1,14 +1,41 @@
 # Redocly OpenAPI VS Code Extension
 
+## Release 0.2.0 (2022-01-13)
+
+### Features
+
+- Added interactive controls for the `tags` section.
+
+- Added support for drag-and-drop reordering of list data in the cursor context panel. In this version of the extension, you can drag-and-drop elements in `servers` and `tags` sections to reorder them.
+
+- Added **Go to root** button to the *Cursor context* panel for quick navigation from any section back to the root of the API document.
+
+- The extension supports OpenAPI validation for `.json` files.
+
+- Added support for value autocompletion in several types of fields:
+
+  - `$ref` fields with `components` defined in the same file
+  - fields of type `enum` and `boolean`
+  - `default` and `example` fields that should have a predefined value from a sibling `enum` field 
+
+
+### Fixes
+
+- Implemented a number of stability improvements.
+- Fixed issues with text editing via interactive control forms.
+- The extension shows `Cursor context` icon and `RedoclyOpenAPI.openContext` command only for `yaml` language.
+
+----
+
 ## Release 0.1.0 (2021-11-18)
 
 ### Features
 
-- The extension now supports **interactive controls** for `info`, `server`, and `externalDocs` sections. To activate interactive controls, open the cursor context panel and place the cursor into any of the supported sections. The cursor context panel will show the visual OpenAPI editor where you can modify the contents of the supported sections directly. Your changes are immediately reflected in the API definition file.
+- Added **interactive controls** for `info`, `server`, and `externalDocs` sections. To activate interactive controls, open the cursor context panel and place the cursor into any of the supported sections. The cursor context panel will show the visual OpenAPI editor where you can modify the contents of the supported sections directly. Your changes are immediately reflected in the API definition file.
 
-- You can now use the `htmlTemplate` option in your `.redocly.yaml` configuration file to style the look of the live documentation preview.
+- You can use the `htmlTemplate` option in your `.redocly.yaml` configuration file to style the look of the live documentation preview.
 
-- The live preview panel now automatically scrolls to the section of the API definition you're editing. More specifically, the following behavior has been implemented:
+- The live preview panel automatically scrolls to the section of the API definition you're editing. More specifically, the following behavior has been implemented:
 
   - Editing a tag scrolls to the tag section
   - Editing a path item scrolls to the first operation in the path item
@@ -18,9 +45,9 @@
 ### Fixes
 
 - Implemented a number of performance and stability improvements.
-- The autocompletion feature now automatically switches to a new line if the selected item is not a scalar type. It also makes it easier to move to a new line on the same level as the current item by providing the `newLine` option in the suggestion dropdown.
+- The autocompletion feature automatically switches to a new line if the selected item is not a scalar type. It also makes it easier to move to a new line on the same level as the current item by providing the `newLine` option in the suggestion dropdown.
 - Improved the suggestions for the `referenceDocs` section of the `.redocly.yaml` configuration file.
-- Root-level items in the suggestion dropdown are now sorted according to the OpenAPI specification. 
+- Root-level items in the suggestion dropdown are sorted according to the OpenAPI specification. 
 
 ----
 
@@ -28,7 +55,7 @@
 
 ### Features
 
-- Fields in YAML files that contain a link to an internal file now support the *Go to...* option. Use this option to quickly access files in your project - for example, to open referenced API definitions directly from the `apiDefinitions` section in `.redocly.yaml`.
+- Added the *Go to...* option to fields in YAML files that contain a link to an internal file. Use this option to quickly access files in your project - for example, to open referenced API definitions directly from the `apiDefinitions` section in `.redocly.yaml`.
 
 - Improved autocompletion and validation for the `.redocly.yaml` configuration file.
 
@@ -44,9 +71,9 @@
 
 ### Features
 
-- The extension now supports a new panel: the cursor context, where you can learn more about OpenAPI objects and properties you're editing. Select the *Open cursor context* icon in the VS Code toolbar to open the panel. The descriptions in the panel are context-aware, and will change as you place your cursor into different sections of your OpenAPI document. 
+- Added a new panel called **Cursor context**, where you can learn more about OpenAPI objects and properties you're editing. Select the *Open cursor context* icon in the VS Code toolbar to open the panel. The descriptions in the panel are context-aware, and will change as you place your cursor into different sections of your OpenAPI document. 
 
-- The live documentation preview feature now requires an API key from Redocly. When you open the *Preview* panel, you will find the instructions for how to obtain the key.
+- The live documentation preview feature requires an API key from Redocly. When you open the *Preview* panel, you will find the instructions for obtaining the key.
 
 - Improved the performance of validation and autocompletion in all types of files, including OpenAPI documents, referenced files (linked with $ref in OpenAPI documents), and configuration files.
 
@@ -58,7 +85,7 @@
 
 ### Features
 
-- Implemented autocompletion for configuration files. When editing the `referenceDocs` section of the `.redocly.yaml` file, you will now get a list of all supported configuration options in the suggestions widget.
+- Implemented autocompletion for configuration files. When editing the `referenceDocs` section of the `.redocly.yaml` file, you will get a list of all supported configuration options in the suggestions widget.
 
 ----
 
@@ -83,8 +110,8 @@
 
 ### Features
 
-- The preview panel now uses the styling from the VS Code theme.
-- The live preview now updates and saves state even when running in the background (when the preview panel is closed).
+- The preview panel uses the styling from the VS Code theme.
+- The live preview updates and saves state even when running in the background (when the preview panel is closed).
 
 ----
 
@@ -100,11 +127,11 @@
 
 ### Features
 
-- The preview panel now uses Reference docs instead of Redoc to generate the documentation preview.
+- The preview panel uses Reference docs instead of Redoc to generate the documentation preview.
 - The preview panel uses settings from the `.redocly.yaml` file.
 - Implemented preview persistence (restores the view state after going to background and between VS Code restarts).
 - The active definition button is highlighted in the preview.
-- Names from the `apiDefinitions` list are now used in the preview instead of file names.
+- Names from the `apiDefinitions` list are used in the preview instead of file names.
 
 ### Fixes
 
