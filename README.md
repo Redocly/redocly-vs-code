@@ -22,7 +22,17 @@ Redocly OpenAPI is a Visual Studio Code extension that helps you write, validate
 
 - The extension requires a `.redocly.yaml` configuration file in your workspace. Read how to create it [in the Configuration section](#configuration).
 
-- Note that the extension only works with YAML files.
+- Note that the extension only works with YAML files. Validation for JSON files is supported starting with version `0.2.0` of the extension.
+
+
+### Limitations
+
+Be aware that the extension may be affected by some limitations of the VS Code editor.
+
+So far, we have identified these limitations:
+
+- Special characters `/`, `$` and `#` do not trigger VS Code suggestions
+- VS Code doesn't suggest values while inside a snippet
 
 
 ## Installation
@@ -105,6 +115,19 @@ To use the extension for OpenAPI authoring, create a new, empty YAML file. As yo
 
 Select a suggestion from the list. The extension will automatically generate the fields supported by the selected OpenAPI section. You can then add your values for each of the fields.
 
+### Value autocompletion 
+
+Starting with version `0.2.0`, the extension supports value autocompletion for references (`$ref` fields). To use this feature, your OpenAPI document must have `components` with a proper type defined. For example, the extension will only suggest values for `$ref` inside `requestBody` if you have components defined in `requestBodies`. Similarly, it will only suggest values from `schemas` for `$ref` fields inside `schema`.
+
+![References completion](https://redoc.ly/images/vscode/openapi-vscode-reference-completion.gif)
+
+Autocompletion for `example` and `default` fields will suggest values you have previously defined in `enum` on the same level.
+
+![Example/Default completion](https://redoc.ly/images/vscode/openapi-vscode-example-default-completion.gif)
+
+The extension will also show suggested values for all other fields that have a predefined set of values according to the OpenAPI specification (like `required`, which has `boolean` type; or `type`, which must be one of `array` | `object` | `number`) and that are supported by [Redocly OpenAPI CLI].
+
+![Value completion](https://redoc.ly/images/vscode/openapi-vscode-enum-boolean-completion.gif)
 
 ### Dynamic OpenAPI validation 
 
@@ -217,12 +240,14 @@ For supported sections, the *Cursor context* panel can also display a visual edi
 
 ![Using the visual editor](https://redoc.ly/images/vscode/redocly-vscode-visual-editor.gif)
 
+Depending on the currently selected section of the OpenAPI document, the *Cursor context* panel may show triple bar ("hamburger") icons to the left of each input field in the visual editor. Use these icons to change the order of fields in the panel. To reorder a field, select the triple bar icon next to it, then drag-and-drop it up or down in the panel.
+
 To exit, close the *Cursor context* panel. You can open it again at any point.
 
 
 ## Known issues
 
-- Interactive forms are supported only for `info`, `server`, and `externalDocs` sections in the current version.
+- Interactive forms are supported only for `info`, `server`, `tags` and `externalDocs` sections in the current version.
 
 - Autocompletion support is limited in the current version.
 
@@ -241,3 +266,4 @@ If you suspect the extension is not working properly, make sure the following co
 ## License
 
 Installation and usage of the extension are subject to the terms and conditions of the [Redocly Subscription agreement](https://redoc.ly/subscription-agreement/).
+
