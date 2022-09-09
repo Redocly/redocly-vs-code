@@ -2,7 +2,7 @@
 name: Bug report
 about: Tell us about a problem you found with the product
 title: ''
-labels: 'type: bug'
+labels: 'Type: Bug'
 assignees: ''
 
 ---
