@@ -70,23 +70,29 @@ The `.redocly.yaml` configuration file defines the criteria for validating OpenA
 Add the following example contents to the file and save the changes:
 
 ```yaml
-apiDefinitions:
-  main: path/to/your-openapi.yaml
-  test: path/to/another-openapi.yaml
-lint:
-  extends:
-    - recommended
-  rules:
-    tag-description: off
-    operation-summary: error
-    no-unresolved-refs: error
-    no-unused-components: error
-    operation-2xx-response: error
-    operation-operationId: error
-    operation-singular-tag: error
-    no-enum-type-mismatch: error
-    no-identical-paths: error
-    no-ambiguous-paths: error
+apis:
+  apiName@version:
+    root: ./openapi.yaml
+
+extends:
+  - recommended
+  
+rules:
+  assert/operation-description:
+    subject: 
+      type: Operation
+      property: description
+    assertions:
+      defined: true
+      minLength: 30
+
+theme:
+  openapi:
+    generateCodeSamples:
+      languages:
+        - lang: curl
+        - lang: Node.js
+        - lang: Python
 ```
 
 This will let you start working with the extension. You can modify the file at any point to control the behavior of the extension. When modifying the `.redocly.yaml` file, you must save it to disk for your changes to apply.
