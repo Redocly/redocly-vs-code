@@ -20,7 +20,7 @@ Redocly OpenAPI is a Visual Studio Code extension that helps you write, validate
 
 ## Before you start
 
-- The extension requires a `.redocly.yaml` configuration file in your workspace. Read how to create it [in the Configuration section](#configuration).
+- The extension requires a `redocly.yaml` configuration file in your workspace. Read how to create it [in the Configuration section](#configuration).
 
 - Note that the extension only works with YAML files. Validation for JSON files is supported starting with version `0.2.0` of the extension.
 
@@ -50,7 +50,7 @@ To install the extension in VS Code:
 
 ## Configuration
 
-To use the extension, we recommend you create a configuration file called `.redocly.yaml` and place it in the root directory of your workspace. If the extension detects that this file doesn't exist, it will prompt you to create it automatically for the current workspace.
+To use the extension, we recommend you create a configuration file called `redocly.yaml` and place it in the root directory of your workspace. If the extension detects that this file doesn't exist, it will prompt you to create it automatically for the current workspace.
 
 Here's an example of what your directory structure could look like:
 
@@ -60,12 +60,12 @@ Here's an example of what your directory structure could look like:
 │   ├── openapi-definitions
 │   │   ├── production.yaml
 │   │   └── test.yaml
-│   ├── .redocly.yaml
+│   ├── redocly.yaml
 │   ├── some-file.txt
 
 ```
 
-The `.redocly.yaml` configuration file defines the criteria for validating OpenAPI definitions. 
+The `redocly.yaml` configuration file defines the criteria for validating OpenAPI definitions. 
 
 Add the following example contents to the file and save the changes:
 
@@ -95,7 +95,7 @@ theme:
         - lang: Python
 ```
 
-This will let you start working with the extension. You can modify the file at any point to control the behavior of the extension. When modifying the `.redocly.yaml` file, you must save it to disk for your changes to apply.
+This will let you start working with the extension. You can modify the file at any point to control the behavior of the extension. When modifying the `redocly.yaml` file, you must save it to disk for your changes to apply.
 
 To learn more about built-in rules you can use, refer to the [Redocly OpenAPI CLI documentation](https://redoc.ly/docs/cli/built-in-rules/). The [linting guide](https://redoc.ly/docs/cli/guides/lint/) provides more information on how to configure the linter.
 
@@ -137,7 +137,7 @@ The extension will also show suggested values for all other fields that have a p
 
 ### Dynamic OpenAPI validation 
 
-The extension continuously validates the OpenAPI definition you're working on. Depending on the rules you've added to your `.redocly.yaml` file, the extension will warn you about the following issues:
+The extension continuously validates the OpenAPI definition you're working on. Depending on the rules you've added to your `redocly.yaml` file, the extension will warn you about the following issues:
 
 - indentation
 - incorrect type usage
@@ -196,11 +196,11 @@ In the panel, you must provide an API key from Redocly to use the documentation 
 
 When you have generated your personal API key, paste it into the *API key* in the *Preview* panel and select **Submit**. Documentation previews will be enabled for all your workspaces.
 
-In the tab bar above the panel, select the name of the YAML file for which you want to preview the documentation. If you have defined custom names in the `apiDefinitions` section of the `.redocly.yaml` file, those names will be displayed in tabs instead of file names. Selecting a name loads the API documentation preview for the API definition.
+In the tab bar above the panel, select the name of the YAML file for which you want to preview the documentation. If you have defined custom names in the `apiDefinitions` section of the `redocly.yaml` file, those names will be displayed in tabs instead of file names. Selecting a name loads the API documentation preview for the API definition.
 
 ![Using the documentation preview feature](https://redoc.ly/images/vscode/openapi-vscode-live-preview.png)
 
-To customize the documentation preview, add [supported Reference configuration options](https://redoc.ly/docs/api-reference-docs/configuration/) to the `referenceDocs` section in your `.redocly.yaml` file.
+To customize the documentation preview, add [supported Reference configuration options](https://redoc.ly/docs/api-reference-docs/configuration/) to the `referenceDocs` section in your `redocly.yaml` file.
 
 For example, to hide the logo image and change the font size and color, you could add the following:
 
@@ -221,7 +221,7 @@ referenceDocs:
       fontSize: 16px
 ```
 
-Remember to save the `.redocly.yaml` file for changes to apply.
+Remember to save the `redocly.yaml` file for changes to apply.
 
 To exit the documentation preview, close the *Preview* panel. You can open it again at any point.
 
@@ -257,7 +257,7 @@ To exit, close the *Cursor context* panel. You can open it again at any point.
 
 - Autocompletion support is limited in the current version.
 
-- The `.redocly.yaml` file must be saved to disk (Ctrl+S) for changes to apply.
+- The `redocly.yaml` file must be saved to disk (Ctrl+S) for changes to apply.
 
 
 ## Troubleshooting
@@ -265,7 +265,7 @@ To exit, close the *Cursor context* panel. You can open it again at any point.
 If you suspect the extension is not working properly, make sure the following conditions are true:
 
 - the extension is enabled in the current VS Code workspace (or globally)
-- a non-empty `.redocly.yaml` configuration file exists in the root directory of your workspace
+- a non-empty `redocly.yaml` configuration file exists in the root directory of your workspace
 - your API definition file is in the YAML format
 
 
