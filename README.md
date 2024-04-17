@@ -17,6 +17,7 @@ Redocly OpenAPI is a Visual Studio Code extension that helps you write, validate
 
 **Found an issue or have an idea for improving the extension? [Let us know!](https://github.com/Redocly/redocly-vs-code/issues/new/choose)**
 
+**The changelog is available [here](https://marketplace.visualstudio.com/items/Redocly.openapi-vs-code/changelog).**
 
 ## Before you start
 
